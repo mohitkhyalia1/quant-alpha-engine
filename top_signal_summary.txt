@@ -1,0 +1,149 @@
+======================================================================
+MOCCM BLACK-BOX SIGNAL HUNT 2026 — DISCOVERY SUMMARY
+======================================================================
+
+[1] TOP LEAD-LAG FEATURES (Spearman IC, abs-sorted)
+            feature  lag  spearman_r  n_obs
+TICKER_01__logret_1    1     0.19017 188998
+   TICKER_01__ret_1    1     0.19017 188998
+TICKER_01__logret_1    2     0.12458 188997
+   TICKER_01__ret_1    2     0.12458 188997
+   TICKER_01__ret_3    1     0.09902 188996
+TICKER_01__logret_3    1     0.09902 188996
+TICKER_01__logret_1    3     0.09553 188996
+   TICKER_01__ret_1    3     0.09553 188996
+   TICKER_01__ret_1    4     0.08222 188995
+TICKER_01__logret_1    4     0.08222 188995
+TICKER_01__logret_5    1     0.07782 188994
+   TICKER_01__roc_5    1     0.07782 188994
+   TICKER_01__ret_5    1     0.07782 188994
+ TICKER_01__price_z    1     0.07588 188980
+   TICKER_01__ret_1    5     0.07249 188994
+TICKER_01__logret_1    5     0.07249 188994
+   TICKER_01__ret_3    2     0.06529 188995
+TICKER_01__logret_3    2     0.06529 188995
+TICKER_01__logret_5    2     0.05143 188993
+   TICKER_01__ret_5    2     0.05143 188993
+
+→ KEY PREDICTIVE TICKERS: ['TICKER_01', 'TICKER_25']
+
+[2] BEST CONDITIONAL RULES (sorted by HIT RATE — target >0.85)
+            feature  threshold direction  n_signals  mean_ret  hit_rate   sharpe
+   TICKER_01__ret_1  -0.003283     short       9450 -0.001751    0.5798 -45.0671
+TICKER_01__logret_1  -0.003289     short       9450 -0.001751    0.5798 -45.0671
+TICKER_01__logret_1  -0.003289     short       9450 -0.001751    0.5798 -45.0671
+   TICKER_01__ret_1  -0.003283     short       9450 -0.001751    0.5798 -45.0671
+   TICKER_01__ret_1  -0.003283     short       9450 -0.001751    0.5798 -45.0671
+TICKER_01__logret_1  -0.003289     short       9450 -0.001751    0.5798 -45.0671
+   TICKER_01__ret_1  -0.003283     short       9450 -0.001751    0.5798 -45.0671
+TICKER_01__logret_1  -0.003289     short       9450 -0.001751    0.5798 -45.0671
+TICKER_01__logret_1  -0.003289     short       9450 -0.001751    0.5798 -45.0671
+   TICKER_01__ret_1  -0.003283     short       9450 -0.001751    0.5798 -45.0671
+TICKER_01__logret_1  -0.002560     short      18900 -0.001477    0.5740 -43.0035
+   TICKER_01__ret_1  -0.002556     short      18900 -0.001477    0.5740 -43.0035
+   TICKER_01__ret_1  -0.002556     short      18900 -0.001477    0.5740 -43.0035
+TICKER_01__logret_1  -0.002560     short      18900 -0.001477    0.5740 -43.0035
+   TICKER_01__ret_1  -0.002556     short      18900 -0.001477    0.5740 -43.0035
+TICKER_01__logret_1  -0.002560     short      18900 -0.001477    0.5740 -43.0035
+TICKER_01__logret_1  -0.002560     short      18900 -0.001477    0.5740 -43.0035
+   TICKER_01__ret_1  -0.002556     short      18900 -0.001477    0.5740 -43.0035
+   TICKER_01__ret_1  -0.002556     short      18900 -0.001477    0.5740 -43.0035
+TICKER_01__logret_1  -0.002560     short      18900 -0.001477    0.5740 -43.0035
+
+[3] DETERMINISTIC SCAN (hit_rate → 1.0 is the rule)
+   ticker  lag condition  hit_rate     n
+TICKER_01    1     ret<0   0.57189 94510
+TICKER_01    1     ret>0   0.56963 94486
+TICKER_01    2     ret>0   0.53703 94485
+TICKER_01    2     ret<0   0.53574 94510
+TICKER_01    3     ret>0   0.52858 94485
+TICKER_01    4     ret>0   0.52554 94484
+TICKER_01    3     ret<0   0.52339 94509
+TICKER_01    5     ret>0   0.52259 94484
+TICKER_01    4     ret<0   0.51964 94509
+TICKER_01    5     ret<0   0.51653 94508
+TICKER_06    4     ret>0   0.50551 94632
+TICKER_25    5     ret>0   0.50541 94206
+TICKER_47    4     ret>0   0.50540 94367
+TICKER_06    5     ret>0   0.50539 94631
+TICKER_08    5     ret>0   0.50532 94461
+TICKER_12    5     ret>0   0.50522 94276
+TICKER_08    4     ret>0   0.50470 94461
+TICKER_10    3     ret>0   0.50467 94576
+TICKER_30    5     ret>0   0.50467 94180
+TICKER_47    5     ret>0   0.50464 94367
+
+[4] VOLUME-STATE SIGNALS (top by abs_sharpe)
+   ticker        feature          threshold  n_signals  mean_fwd_ret  hit_rate_long  hit_rate_short   sharpe  abs_sharpe
+TICKER_01 vol_mom_dn+vol ret<0.005_volz>1.0        356     -0.002479         0.4382          0.5618 -54.0588     54.0588
+TICKER_01 vol_mom_dn+vol ret<0.005_volz>1.5        199     -0.002333         0.4221          0.5779 -53.0563     53.0563
+TICKER_01 vol_mom_dn+vol ret<0.005_volz>2.0         91     -0.001704         0.4396          0.5604 -45.3276     45.3276
+TICKER_01 vol_mom_up+vol ret>0.002_volz>1.5       4976      0.001263         0.5697          0.4303  44.0789     44.0789
+TICKER_01 vol_mom_up+vol ret>0.002_volz>2.0       2362      0.001300         0.5737          0.4263  43.1392     43.1392
+TICKER_01 vol_mom_up+vol ret>0.002_volz>1.0       8361      0.001289         0.5742          0.4258  42.7141     42.7141
+TICKER_40 vol_mom_dn+vol ret<0.005_volz>2.0         77      0.000810         0.6234          0.3766  41.3966     41.3966
+TICKER_09 vol_mom_dn+vol ret<0.005_volz>2.0         83      0.000951         0.6627          0.3373  39.5600     39.5600
+TICKER_01 vol_mom_dn+vol ret<0.002_volz>1.5       5011     -0.001268         0.4195          0.5805 -38.6709     38.6709
+TICKER_01 vol_mom_dn+vol ret<0.002_volz>1.0       8305     -0.001280         0.4278          0.5722 -38.6506     38.6506
+TICKER_01 vol_mom_dn+vol ret<0.002_volz>2.0       2297     -0.001133         0.4358          0.5642 -37.2632     37.2632
+TICKER_01 vol_mom_up+vol ret>0.005_volz>1.0        345      0.001582         0.5507          0.4493  35.8807     35.8807
+TICKER_01 vol_mom_dn+vol ret<0.001_volz>1.0      16199     -0.001008         0.4224          0.5776 -35.6149     35.6149
+TICKER_01 vol_mom_dn+vol ret<0.001_volz>1.5       9891     -0.001000         0.4172          0.5828 -34.7349     34.7349
+TICKER_01 vol_mom_up+vol ret>0.005_volz>2.0         97      0.001447         0.5361          0.4639  32.7130     32.7130
+
+[5] TWO-TICKER INTERACTIONS (by hit_rate)
+ ticker_a  ticker_b     thr_a    thr_b    type  n_signals  mean_ret  hit_rate  sharpe  abs_sharpe
+TICKER_01 TICKER_25    >0.002   >0.005 ret×ret        195  0.001327    0.5949 50.0666     50.0666
+TICKER_01 TICKER_25    >0.005   >0.002 ret×ret        184  0.002685    0.5870 50.5419     50.5419
+TICKER_01 TICKER_25    >0.002   <0.005 ret×ret        181  0.001189    0.5856 48.6937     48.6937
+TICKER_01 TICKER_25    >0.001   >0.005 ret×ret        380  0.000970    0.5842 42.3836     42.3836
+TICKER_01 TICKER_25 ret>0.002 volz>2.0 ret×vol       2182  0.001246    0.5807 44.3679     44.3679
+TICKER_01 TICKER_25 ret>0.005 volz>1.5 ret×vol        203  0.002444    0.5764 52.0733     52.0733
+TICKER_01 TICKER_25    >0.002   <0.002 ret×ret       4717  0.001274    0.5732 42.2823     42.2823
+TICKER_01 TICKER_25    >0.002   >0.002 ret×ret       4709  0.001311    0.5727 44.6388     44.6388
+TICKER_01 TICKER_25 ret>0.001 volz>2.0 ret×vol       4218  0.000894    0.5725 35.4366     35.4366
+TICKER_01 TICKER_25 ret>0.002 volz>1.5 ret×vol       4983  0.001265    0.5719 43.0780     43.0780
+TICKER_01 TICKER_25    >0.001   >0.002 ret×ret       9180  0.000960    0.5705 35.6552     35.6552
+TICKER_01 TICKER_25 ret>0.001 volz>1.5 ret×vol       9708  0.000924    0.5689 36.3553     36.3553
+TICKER_01 TICKER_25 ret>0.002 volz>1.0 ret×vol       8265  0.001234    0.5666 41.6730     41.6730
+TICKER_01 TICKER_25    >0.001   >0.001 ret×ret      18049  0.000955    0.5660 35.6662     35.6662
+TICKER_01 TICKER_25    >0.002   <0.001 ret×ret       9293  0.001251    0.5656 38.5992     38.5992
+
+[6] SPREAD / RELATIVE VALUE (by hit_rate)
+   ticker               label  window  zthr  n_signals  mean_ret  hit_rate  sharpe  abs_sharpe
+TICKER_01 spread_low→long_T00      20   2.0      10865  0.000572    0.5305 15.9361     15.9361
+TICKER_01 spread_low→long_T00      10   2.0       7436  0.000606    0.5274 15.3165     15.3165
+TICKER_01 spread_low→long_T00       5   1.5      20906  0.000453    0.5265 15.2477     15.2477
+TICKER_01 spread_low→long_T00      10   1.5      26014  0.000436    0.5232 14.8877     14.8877
+TICKER_01 spread_low→long_T00       5   1.0      50465  0.000373    0.5228 13.4553     13.4553
+TICKER_01 spread_low→long_T00      10   1.0      50856  0.000328    0.5180 11.8937     11.8937
+TICKER_01 spread_low→long_T00      20   1.5      28568  0.000385    0.5175 12.7922     12.7922
+TICKER_01 spread_low→long_T00      20   1.0      51762  0.000276    0.5126 10.0098     10.0098
+TICKER_25 spread_low→long_T00      20   2.0      10915  0.000198    0.5046  5.4346      5.4346
+TICKER_25 spread_low→long_T00      20   1.5      28276  0.000135    0.5037  4.3490      4.3490
+TICKER_25 spread_low→long_T00      10   1.0      50552  0.000099    0.5036  3.3866      3.3866
+TICKER_25 spread_low→long_T00      20   1.0      50780  0.000113    0.5034  3.9674      3.9674
+TICKER_25 spread_low→long_T00       5   1.0      50839  0.000066    0.5005  2.2827      2.2827
+TICKER_25 spread_low→long_T00      10   1.5      26440  0.000104    0.5003  3.4436      3.4436
+TICKER_25 spread_low→long_T00       5   1.5      21247  0.000104    0.4994  3.2710      3.2710
+
+======================================================================
+HOW TO USE THESE RESULTS:
+  1. Find the SINGLE rule with hit_rate > 0.80 in [2] or [5]
+  2. If hit_rate > 0.95 in [3], that is your deterministic trigger
+  3. Open backtest_engine.py → SIGNAL_PARAMS → fill in the rule
+  4. For TWO-condition rules, edit compute_signals() directly
+  5. Run: python3 backtest_engine.py <csv> <team_name>
+  6. Run: python3 validate_and_score.py <team_name>
+  7. Target Sharpe > 2.0.  Deterministic rule → Sharpe >> 5.0.
+======================================================================
+
+BEST SINGLE RULE (auto-selected by hit_rate):
+  feature=TICKER_01__ret_1  threshold=-0.003283  direction=short  hit_rate=0.5798  n=9450  sharpe=-45.0671
+
+  → Copy into SIGNAL_PARAMS:
+      'pred_ticker':  'TICKER_01',
+      'feature_type': 'ret_1',
+      'threshold':     -0.003283,
+      'direction':    'short',
+======================================================================
